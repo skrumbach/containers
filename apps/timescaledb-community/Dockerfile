@@ -11,7 +11,7 @@
 # VERSION is the exact Debian package version from
 # packagecloud.io/timescale/timescaledb (trixie); the image tag is the part
 # before `~` (docker-bake.hcl, build.yaml).
-ARG BASE=ghcr.io/cloudnative-pg/postgresql:18.6-minimal-trixie@sha256:64abc98a4387361afd6821a3a99f975763bbd87bbdde9449e75ad6002528a318
+ARG BASE=ghcr.io/cloudnative-pg/postgresql:18.6-minimal-trixie@sha256:ec2ed3404e89fff99643901b58a2a34c46a46345fe69a3d96500b82f995c327b
 FROM ${BASE} AS builder
 
 ARG PG_MAJOR=18
