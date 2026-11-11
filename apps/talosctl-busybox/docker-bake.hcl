@@ -6,7 +6,7 @@ variable "APP" {
 
 variable "VERSION" {
   // renovate: datasource=docker depName=ghcr.io/siderolabs/talosctl
-  default = "v1.14.5"
+  default = "v1.14.6"
 }
 
 group "default" {
