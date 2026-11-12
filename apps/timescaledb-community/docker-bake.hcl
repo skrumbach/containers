@@ -7,7 +7,7 @@ variable "APP" {
 // Exact Debian package version; the image tag is the part before `~` (2.31.0).
 variable "VERSION" {
   // renovate: datasource=deb depName=timescaledb-2-postgresql-18 versioning=deb
-  default = "2.31.0~debian13-1806"
+  default = "2.32.0~debian13-1806"
 }
 
 group "default" {
