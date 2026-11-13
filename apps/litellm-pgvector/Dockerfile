@@ -8,7 +8,7 @@
 # upstream commit, a patch or constraints.txt changes. A base-image refresh
 # rebuilds the same tag; home-ops pins the digest, so Renovate there picks the
 # rebuild up as a digest update.
-FROM python:3.11-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39 AS build
+FROM python:3.15-slim-bookworm@sha256:96599df822d0e1c6bb700014a05c7f3c8cabc6e0f7ff3c4f9f69cee033b4b5d9 AS build
 
 # Upstream main as of 2025-12-22 (the merge of BerriAI/litellm-pgvector#2,
 # which also carries the #7 file_counts fix). A git ADD pinned to a full commit
@@ -53,7 +53,7 @@ RUN python -m venv /opt/venv \
     && install -D -m 0755 "$1" /opt/prisma/query-engine
 
 # Same base as the build stage (the venv is not relocatable across Pythons).
-FROM python:3.11-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39
+FROM python:3.15-slim-bookworm@sha256:96599df822d0e1c6bb700014a05c7f3c8cabc6e0f7ff3c4f9f69cee033b4b5d9
 
 ARG VERSION
 LABEL org.opencontainers.image.description="BerriAI/litellm-pgvector (OpenAI-compatible vector store API on PGVector), release ${VERSION}"
